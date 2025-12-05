@@ -37,6 +37,13 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+FULL ADDER 
+
+![ttfulladder](https://github.com/user-attachments/assets/10b30295-3ca3-45aa-9873-591218b2ac77)
+
+FULL SUBTRACTOR 
+
+![ttfullsubtractor](https://github.com/user-attachments/assets/2aa09fda-f13f-41bd-b674-611d7c910a97)
 
 **Procedure**
 
@@ -44,12 +51,55 @@ Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by:NITESH BHANDARI K 
+RegisterNumber: 25009039
 */
+FULL ADDER
+
+module fa(a, b, cin, sum, carry);
+
+input a, b, cin;
+
+output sum, carry;
+
+assign sum = (a ^ b) ^ cin;
+
+assign carry = (a & b) | (cin & (a ^ b));
+
+endmodule
+
+FULL SUBRACTOR
+
+module fs(a, b, bin, difference, borrow);
+
+input a, b, bin;
+
+output difference, borrow;
+
+assign difference = (a ^ b) ^ bin;
+
+assign borrow = (a & b) | (bin & ((a ^ b)));
 
 **RTL Schematic**
+FULL ADDER 
+
+<img width="1902" height="768" alt="fulladder" src="https://github.com/user-attachments/assets/b25b5a29-6854-4ecb-8163-9983ed7fd2aa" />
+
+FULL SUBTRACTOR 
+
+<img width="1905" height="765" alt="fullsubtractor" src="https://github.com/user-attachments/assets/11722f5f-bbf6-4bd5-8b61-57b8fc4a0c65" />
+
 
 **Output Timing Waveform**
+
+FULL ADDER WAVEFORM 
+
+<img width="1906" height="373" alt="fulladderwave" src="https://github.com/user-attachments/assets/1f9f788b-03cc-407e-a48d-e14698fba662" />
+
+ FULL SUBTRACTOR 
+
+ <img width="1910" height="426" alt="fullsubtractorwave" src="https://github.com/user-attachments/assets/5bd767b0-0e01-4046-a7eb-f7284d3e443e" />
+
 
 **Result:**
 
